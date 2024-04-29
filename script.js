@@ -8,12 +8,12 @@ const botoes =document.querySelectorAll('.app__card-button')
 const startPauseBt =document.querySelector('#start-pause')
 const musicaFocoInput =document.querySelector('#alternar-musica')
 const iniciarOuPausarBt = document.querySelector('#start-pause span')
-const musica = new Audio('/sons/luna-rise-part-one.mp3')
+const musica = new Audio('./sons/luna-rise-part-one.mp3')
 const tempoNaTela = document.querySelector('#timer')
 
-const musicaPlay =new Audio('/sons/play.wav')
-const musicaPause =new Audio('/sons/pause.mp3')
-const musicaFim =new Audio('/sons/beep.mp3')
+const musicaPlay =new Audio('./sons/play.wav')
+const musicaPause =new Audio('./sons/pause.mp3')
+const musicaFim =new Audio('./sons/beep.mp3')
 const sinalParar = document.querySelector('.app__card-primary-butto-icon')
 
 let tempoDecorridoEmSegundos = 1500
@@ -54,7 +54,7 @@ function alterarContexto(contexto) {
         contexto.classList.remove('active')
     })
     html.setAttribute('data-contexto', contexto)
-    banner.setAttribute('src', `/imagens/${contexto}.png`)
+    banner.setAttribute('src', `./imagens/${contexto}.png`)
     switch (contexto) {
         case "foco":
             titulo.innerHTML = `Otimize sua produtividade,<br>
@@ -97,13 +97,13 @@ function iniciarOuPausar() {
     musicaPlay.play()
     intervaloId = setInterval(contagemRegressiva, 1000)
     iniciarOuPausarBt.textContent = "Pausar"
-    sinalParar.setAttribute ('src', `/imagens/pause.png`)
+    sinalParar.setAttribute ('src', `./imagens/pause.png`)
 }
 
 function zerar() {
     clearInterval(intervaloId)
     iniciarOuPausarBt.textContent = "Começar"
-    sinalParar.setAttribute ('src', `/imagens/play_arrow.png`)
+    sinalParar.setAttribute ('src', `./imagens/play_arrow.png`)
     intervaloId = null
 }
 
